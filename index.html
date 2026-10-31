@@ -33,7 +33,7 @@
       <li><strong>İzinler.</strong> Oyun titreşim (VIBRATE) iznini ve çökme raporlarını gönderebilmek için internet ve ağ durumu (INTERNET, ACCESS_NETWORK_STATE) izinlerini kullanır. Bu izinler kişisel verilerinize erişim sağlamaz.</li>
       <li><strong>Çocuklar.</strong> Oyun 13 yaş ve üzeri oyuncular içindir ve çocuklardan bilerek kişisel veri toplamaz.</li>
     </ul>
-    <p>Bu politika değişirse güncel hali bu sayfada yayımlanır. Sorularınız için: <a href="mailto:themathfunapp@gmail.com">themathfunapp@gmail.com</a></p>
+    <p>Bu politika değişirse güncel hali bu sayfada yayımlanır. Sorularınız için: <span class="contact">themathfunapp (at) gmail (dot) com</span></p>
   </section>
 
   <section id="en" lang="en">
@@ -47,9 +47,19 @@
       <li><strong>Permissions.</strong> The game uses the vibration (VIBRATE) permission, and the internet and network-state (INTERNET, ACCESS_NETWORK_STATE) permissions to send crash reports. None of them gives access to your personal data.</li>
       <li><strong>Children.</strong> The game is meant for players aged 13 and over and does not knowingly collect personal data from children.</li>
     </ul>
-    <p>If this policy changes, the current version will be published on this page. Questions: <a href="mailto:themathfunapp@gmail.com">themathfunapp@gmail.com</a></p>
+    <p>If this policy changes, the current version will be published on this page. Questions: <span class="contact">themathfunapp (at) gmail (dot) com</span></p>
   </section>
   <hr>
 </main>
+<script>
+  // The address is put together in the browser, so bots that harvest e-mail addresses from the page source miss it.
+  var address = ['themathfunapp', 'gmail.com'].join('@');
+  document.querySelectorAll('.contact').forEach(function (span) {
+    var link = document.createElement('a');
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+    span.replaceWith(link);
+  });
+</script>
 </body>
 </html>
